@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <data>
+
+        <variable
+            name="model"
+            type="com.projectblejder.murmur.conversation.viewModels.ConversationViewModel"/>
+
+        <variable
+            name="handler"
+            type="com.projectblejder.murmur.conversation.fragments.ConversationFragmentHandler"/>
+    </data>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -39,6 +50,7 @@
                 android:layout_toStartOf="@+id/sendButton"
                 android:hint="@string/conversation_write_message_hint"
                 android:maxLines="5"
+                android:text="@={model.newMessageText}"
                 android:textColor="@color/primary_text_color"
                 android:textColorHint="@color/disabled_text_color"/>
 
@@ -49,6 +61,7 @@
                 android:layout_alignBottom="@id/messageText"
                 android:layout_alignParentEnd="true"
                 android:elevation="@dimen/toolbar_elevation"
+                android:onClick="@{v -> handler.sendButtonClick()}"
                 android:src="@drawable/ic_circled_send"/>
         </RelativeLayout>
     </RelativeLayout>

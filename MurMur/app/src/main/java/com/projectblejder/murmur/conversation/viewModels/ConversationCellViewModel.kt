@@ -2,7 +2,7 @@ package com.projectblejder.murmur.conversation.viewModels
 
 import android.databinding.ObservableField
 
-class ConversationCellViewModel(val my: Boolean) {
+class ConversationCellViewModel(text: String, val my: Boolean) {
 
-    val text = ObservableField<String>("sort example text")
+    val text = ObservableField<String>(text)
 }
