@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MurMur</string>
+    <string name="conversation_write_message_hint">Write message</string>
 </resources>

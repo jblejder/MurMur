@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:elevation="@dimen/toolbar_elevation"
+            android:theme="@style/AlertDialog.AppCompat.Light"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/messageBox"
+            android:layout_below="@+id/toolbar"/>
+
+
+        <RelativeLayout
+            android:id="@+id/messageBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@android:color/white"
+            android:padding="@dimen/margin_medium">
+
+            <EditText
+                android:id="@+id/messageText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@+id/sendButton"
+                android:hint="@string/conversation_write_message_hint"
+                android:maxLines="5"
+                android:textColor="@color/primary_text_color"
+                android:textColorHint="@color/disabled_text_color"/>
+
+            <ImageView
+                android:id="@+id/sendButton"
+                android:layout_width="@dimen/image_size_medium"
+                android:layout_height="@dimen/image_size_medium"
+                android:layout_alignBottom="@id/messageText"
+                android:layout_alignParentEnd="true"
+                android:elevation="@dimen/toolbar_elevation"
+                android:src="@drawable/ic_circled_send"/>
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>

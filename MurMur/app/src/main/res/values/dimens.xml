@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="toolbar_elevation">4dp</dimen>
+
+    <dimen name="margin_medium">8dp</dimen>
+
+
+    <dimen name="image_size_medium">48dp</dimen>
+</resources>

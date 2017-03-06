@@ -23,6 +23,9 @@ android {
         enabled = true
     }
 }
+kapt {
+    generateStubs = true
+}
 
 ext {
     supportLibVersion = '25.2.0'
@@ -38,7 +41,7 @@ dependencies {
     compile "com.android.support:design:${supportLibVersion}"
     compile "com.android.support:support-fragment:${supportLibVersion}"
     compile "com.android.support:recyclerview-v7:${supportLibVersion}"
-
+    kapt "com.android.databinding:compiler:2.3.0"
     compile 'joda-time:joda-time:2.3'
 
     compile 'org.jdeferred:jdeferred-android-aar:1.2.4'
