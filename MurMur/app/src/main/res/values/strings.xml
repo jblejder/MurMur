@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">MurMur</string>
     <string name="conversation_write_message_hint">Write message</string>
+
+    <string name="register_label">MurMur</string>
+    <string name="register_password">Password</string>
+    <string name="register_login">Login</string>
 </resources>

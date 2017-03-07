@@ -3,7 +3,10 @@
     <dimen name="toolbar_elevation">4dp</dimen>
 
     <dimen name="margin_medium">8dp</dimen>
-
+    <dimen name="margin_slarge">16dp</dimen>
+    <dimen name="margin_large">32dp</dimen>
 
     <dimen name="image_size_medium">48dp</dimen>
+
+    <dimen name="text_size_big">32sp</dimen>
 </resources>
