@@ -8,6 +8,6 @@ class RegisterViewModel {
     val password = ObservableField<String>();
 
     fun executeRegister() {
-        
+
     }
 }
