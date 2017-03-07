@@ -1,10 +1,8 @@
 package com.projectblejder.murmur.conversation.fragments
 
-import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import com.projectblejder.murmur.R
@@ -14,7 +12,10 @@ import com.projectblejder.murmur.databinding.ConversationFragmentBinding
 import com.projectblejder.murmur.shared.baseActivity.BaseFragment
 
 
-class ConversationFragment : BaseFragment(), ConversationFragmentHandler {
+class ConversationFragment : BaseFragment<ConversationFragmentBinding>(), ConversationFragmentHandler {
+
+    override val layoutId = R.layout.conversation_fragment
+
     val viewModel = ConversationViewModel()
 
     companion object {
@@ -23,13 +24,7 @@ class ConversationFragment : BaseFragment(), ConversationFragmentHandler {
         }
     }
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val binding = DataBindingUtil.inflate<ConversationFragmentBinding>(
-                inflater,
-                R.layout.conversation_fragment,
-                container,
-                false)
-
+    override fun initView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?) {
         binding.model = viewModel
         binding.handler = this
 
@@ -37,8 +32,6 @@ class ConversationFragment : BaseFragment(), ConversationFragmentHandler {
         binding.recyclerView.layoutManager = LinearLayoutManager(context, LinearLayout.VERTICAL, true)
 
         setToolbar(binding.toolbar)
-
-        return binding.root
     }
 
     override fun sendButtonClick() {
