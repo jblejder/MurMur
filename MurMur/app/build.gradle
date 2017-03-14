@@ -1,9 +1,20 @@
+apply from: 'keys/signing.gradle'
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'com.google.gms.google-services'
 
 android {
+    signingConfigs {
+        def signing = project.extensions.getByName('ext')
+
+        debug {
+            keyAlias signing.getAt('keyAlias')
+            keyPassword signing.getAt('keyPassword')
+            storeFile file(signing.getAt('storeFile'))
+            storePassword signing.getAt('storePassword')
+        }
+    }
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
     defaultConfig {
